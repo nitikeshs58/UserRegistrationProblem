@@ -6,7 +6,7 @@ echo "Welcome to user registration problem."
 VALIDNAMEPATTERN="^[A-Z][a-z]{2,}$"
 EMAILPATTERN="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$"
 MOBILEPATTERN="^[0-9]{2} [6-9]{1}[0-9]{9}$"
-PASSWORD="^[A-Za-z]{7,}*(.*[A-Z].*{1}+)$"
+PASSWORD="^[A-Za-z0-9]{7,}*(.*[A-Z].*{1}+)$"
 
 read -p "Enter first name: " firstName
 if [[ $firstName =~ $VALIDNAMEPATTERN ]]
