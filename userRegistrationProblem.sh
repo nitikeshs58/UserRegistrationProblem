@@ -2,6 +2,11 @@
 
 echo "Welcome to user registration problem."
 
+emailPattern1="^([a-z\d\.-]+)$"
+emailPattern2="^([a-z\d\.-]+)@([a-z\d-]+)$"
+emailPattern3="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})$"
+emailPattern4="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$"
+
 #constants
 VALIDNAMEPATTERN="^[A-Z][a-z]{2,}$"
 EMAILPATTERN="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$"
