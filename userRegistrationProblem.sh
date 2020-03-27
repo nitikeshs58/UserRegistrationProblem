@@ -5,7 +5,7 @@ echo "Welcome to user registration problem."
 #constants
 VALIDNAMEPATTERN="^[A-Z][a-z]{2,}$"
 EMAILPATTERN="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$"
-
+MOBILEPATTERN="[0-9]{2} [6-9]{1}[0-9]{9}$"
 read -p "Enter first name: " firstName
 if [[ $firstName =~ $VALIDNAMEPATTERN ]]
 then
@@ -28,4 +28,12 @@ then
 	echo "Valid Email ID."
 else
 	echo "Invalid Email ID."
+fi
+
+read -p "Enter mobile number: " mobileNumber
+if [[ $mobileNumber =~ $MOBILEPATTERN ]]
+then
+	echo "Valid mobile number."
+else
+	echo "Invalid number."
 fi
