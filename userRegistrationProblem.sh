@@ -13,42 +13,29 @@ EMAILPATTERN="^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$"
 MOBILEPATTERN="^[0-9]{2} [6-9]{1}[0-9]{9}$"
 PASSWORD="^[A-Za-z0-9]{7,}*(.*[A-Z].*{1}+)*(.*[*&^%$#@!+=].*{1})*[a-zA-Z0-9]$"
 
+function patternCheck()
+{
+		if [[ $1 =~ $2 ]]
+	then
+   	echo "Valid Pattern."
+	else
+   	echo "Invalid Pattern."
+	fi
+}
+
+
 read -p "Enter first name: " firstName
-if [[ $firstName =~ $VALIDNAMEPATTERN ]]
-then
-	echo "Valid firstname."
-else
-	echo "Invalid name."
-fi
+patternCheck $firstName $VALIDNAMEPATTERN
 
 read -p "Enter last name: " lastName
-if [[ $lastName =~ $VALIDNAMEPATTERN ]]
-then
-	echo "Valid lastname."
-else
-	echo "Invalid name."
-fi
+patternCheck $lastName $VALIDNAMEPATTERN
 
 read -p "Enter email address: " emailId
-if [[ $emailId =~ $EMAILPATTERN ]]
-then
-	echo "Valid Email ID."
-else
-	echo "Invalid Email ID."
-fi
+patternCheck $emailId $EMAILPATTERN
 
 read -p "Enter mobile number: " mobileNumber
-if [[ $mobileNumber =~ $MOBILEPATTERN ]]
-then
-	echo "Valid mobile number."
-else
-	echo "Invalid number."
-fi
+patternCheck $mobileNumber $MOBILEPATTERN
 
 read -p "Enter your password: " password
-if [[ $password =~ $PASSWORD ]]
-then
-	echo "Valid password."
-else
-	echo "Invalid password"
-fi
+patternCheck $password $PASSWORD
+
